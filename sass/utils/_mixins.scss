@@ -1,0 +1,49 @@
+
+@mixin itemCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin backgroundWithGradiant($url : "") {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url($url);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+@mixin textWithGradiant {
+    background-image: linear-gradient( to right ,$color-primary-light , $color-primary-dark);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+@mixin responsive($breakpoint) {
+    
+    @if $breakpoint == mobile {
+        @media only screen and (max-width : 600px) { @content }
+    }
+
+    @if $breakpoint == tablet {
+        @media only screen and (max-width : 900px) { @content }
+    }
+
+    @if $breakpoint == tablet-land {
+        @media only screen and (max-width : 1200px) { @content }
+    }
+
+    @if $breakpoint == laptop {
+        @media only screen and (min-width : 1201px) and (max-width : 1799px) { @content }
+    }
+
+    @if $breakpoint == desktop {
+        @media only screen and (min-width : 1800px) { @content }
+    }
+
+}

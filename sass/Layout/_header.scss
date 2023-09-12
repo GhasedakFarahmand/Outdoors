@@ -1,0 +1,50 @@
+.header {
+  height: 95vh;
+  @include backgroundWithGradiant("../../img/hero-small.jpg");
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+
+  &__logo-box {
+    padding: 4rem;
+
+    &__logo {
+      height: 3.5rem;
+    }
+  }
+  &__text-box {
+    @include itemCenter;
+    top: 40% !important;
+    text-align: center;
+
+    .header-primary {
+      color: $color-white;
+      text-transform: uppercase;
+      margin-bottom: 6rem;
+
+      &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        margin-bottom: 1.5rem;
+        animation: moveRight 1s;
+
+        @include responsive(mobile) {
+          font-size: 5rem;
+          letter-spacing: 1rem;
+        }
+      }
+      &--sub {
+        display: block;
+        font-size: 2rem;
+        letter-spacing: 1.75rem;
+        font-weight: 800;
+        animation: moveleft 1s ease-out;
+        @include responsive(mobile) {
+          font-size: 1.5rem;
+          letter-spacing: 0.5rem;
+        }
+      }
+    }
+  }
+}

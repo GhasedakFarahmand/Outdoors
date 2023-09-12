@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+html {
+  @include responsive(mobile) {
+    font-size: 10px;
+  }
+
+  @include responsive(tablet) {
+    font-size: 8px;
+  }
+
+  @include responsive(tablet-land) {
+    font-size: 9px;
+  }
+
+  @include responsive(laptop) {
+    font-size: 10px;
+  }
+
+  @include responsive(desktop) {
+    font-size: 12px;
+  }
+
+  scroll-behavior: smooth;
+}
+
+
+.container {
+  max-width: 1400px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.secondary-title{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  letter-spacing: .2rem;
+  transition: all .2s;
+  @include textWithGradiant;
+
+  &:hover{
+    text-shadow: 20px 14px 32px rgba($color-black, .3);
+    transform: scale(1.1) skewY(2deg) skewX(15deg);
+  }
+
+  @include responsive(laptop){
+    font-size: 2.2rem;
+  }
+  @include responsive(tablet-land){
+    font-size: 2rem;
+  }
+  @include responsive(mobile){
+    font-size: 1.75rem;
+  }
+
+}
+a {
+  color: $color-white;
+  text-decoration: none;
+}
